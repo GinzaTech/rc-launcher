@@ -1,0 +1,1 @@
+-keep class dev.rclauncher.rc2.RCNavigationService { *; }

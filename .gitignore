@@ -16,6 +16,10 @@ build
 keystore.properties
 *.jks
 __pycache__
+docs/*.log
+docs/*.xml
+docs/rc-memory*.txt
+artifacts/
 .vscode
 .fleet
 lawnWithQuickstep/release

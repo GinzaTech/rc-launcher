@@ -1,58 +1,51 @@
-# Lawnchair 12.1
+# RC Launcher
 
-[![Build debug APK](https://github.com/LawnchairLauncher/lawnchair/actions/workflows/build_debug_apk.yml/badge.svg)](https://github.com/LawnchairLauncher/lawnchair/actions/workflows/build_debug_apk.yml)
-[![Build release APK](https://github.com/LawnchairLauncher/lawnchair/actions/workflows/build_release_apk.yml/badge.svg)](https://github.com/LawnchairLauncher/lawnchair/actions/workflows/build_release_apk.yml)
-[![Crowdin](https://badges.crowdin.net/e/188ba69d884418987f0b7f1dd55e3a4e/localized.svg)](https://lawnchair.crowdin.com/lawnchair)
-[![Telegram](https://img.shields.io/endpoint?url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Flccommunity)](https://t.me/lccommunity)
-[![Discord](https://img.shields.io/discord/803299970169700402?label=server&logo=discord)](https://discord.gg/3x8qNWxgGZ)
+Launcher gọn cho DJI RC 2, trong fork Lawnchair 12.1-dev. Bản đang bàn giao: **1.0-preview6**, code 6. Có APK debug cài được và release unsigned. Không phải ứng dụng chính thức DJI/Lawnchair.
 
-> **This repository is currently in maintenance mode**. Our main developers currently do not have the time to contibute to the project, so only dependency updates and minor optimizations will be commited.
->
-> *This doesn't mean that the project is dead.* It simply means that Lawnchair’s development is stalled.
->
-> If you have the time to contribute to Lawnchair’s development, please contact a dev via [Telegram](https://t.me/lccommunity). We will gladly appreciate your help.
+Theo điều chỉnh trực tiếp của người dùng, dashboard dùng icon cho DJI Fly/nút mở và tám ô tiện ích; thanh trên có giờ, phần trăm pin RC, nhiệt độ pin và Wi-Fi. Đã bỏ hàng Quay lại/Trang chủ RC/Menu RC/Tất cả ứng dụng vì tay đã có thanh Android ba nút. Dịch vụ điều hướng tùy chọn giữ tắt; không yêu cầu bật để dùng dashboard.
 
-Lawnchair is a free, open-source home app for Android. Taking [Launcher3](https://android.googlesource.com/platform/packages/apps/Launcher3/) — Android’s default home app — as a starting point, it ports Pixel Launcher features and introduces rich options for customization.
+![RC 2 thật, dashboard sau chỉnh](docs/rc-app-icons.png)
 
-This branch houses the codebase of Lawnchair 12.1, currently in alpha and based on Launcher3 from Android 12.1. For older unsupported versions, see the branches with the `9-`, `10-`, `11-`, and `12-` prefixes.
+## Trạng thái thực tế
 
-## Contribute code
+- Đã cài preview3 trên RC 2 `rc331`, API 30, mở dashboard, chọn DJI Fly thật qua picker và mở ứng dụng đúng component runtime.
+- Gói debug **158.414 byte**, không native library, không dependency AndroidX/Compose/Kotlin trong runtime. Cache icon tối đa 4 MB, bitmap 96px; xóa cache và dừng package/icon/status producers khi dashboard ẩn.
+- 24 unit tests gesture/config pass. Debug/release build pass. Lint 0 errors, 33 warnings; không che warnings bằng baseline/suppression.
+- PSS dashboard warm đã quan sát **71.053 KB (~69,4 MiB)**; số đo đơn lẻ bản debug, không phải p95/benchmark release. Xem [hiệu năng](docs/performance-report.md).
+- HOME mặc định chưa đổi; đang chạy companion. Native Home có thể về Lawnchair/cầu Home đang có. Mở RC Launcher từ biểu tượng hoặc nút app PC.
+- Điều hướng Trợ năng đã có source nhưng chưa bật/kiểm chứng trên firmware; không tuyên bố global navigation PASS. Người dùng hiện chọn dùng thanh điều hướng Android sẵn có.
+- Chưa thử bay, soak/reboot hoặc mọi handler của firmware. Xem [matrix](docs/rc2-compatibility.md).
 
-Whether you’ve fixed a bug or introduced a new feature, we welcome pull requests! (If you’d like to make a larger change and check with us first, you can do so via [Lawnchair’s Telegram group chat](https://t.me/lawnchairci).) To help translate Lawnchair 12.1 instead, please see “[Translate](#translate).”
+## Build
 
-You can use Git to clone this repository:
+Windows, JDK 17, Android SDK platform 34 và Gradle wrapper 8.4. Tạo local.properties ngoài Git với sdk.dir của máy. Từ root fork:
 
-```
-git clone --recursive https://github.com/LawnchairLauncher/lawnchair.git
+```powershell
+.\gradlew.bat :rc2:assembleDebug :rc2:assembleRelease :rc2:testDebugUnitTest :rc2:lintDebug --no-daemon
 ```
 
-To build the app, select the `lawnWithQuickstepDebug` build type. Should you face errors relating to the `iconloaderlib` and `searchuilib` projects, run `git submodule update --init --recursive`.
+Output:
 
-Here are a few contribution tips:
+- rc2/build/outputs/apk/debug/rc2-debug.apk: package dev.rclauncher.rc2.debug, Android Debug signer.
+- rc2/build/outputs/apk/release/rc2-release-unsigned.apk: package dev.rclauncher.rc2, debuggable=false, R8/shrink. **Chưa ký, không dùng để cài trực tiếp.**
+- Gói bàn giao ở artifacts/. Source/keystore production không được nhúng vào APK hay Git.
 
-- [The `lawnchair` package](https://github.com/LawnchairLauncher/lawnchair/tree/12.1-dev/lawnchair) houses Lawnchair’s own code, whereas [the `src` package](https://github.com/LawnchairLauncher/lawnchair/tree/12.1-dev/src) includes a clone of the Launcher3 codebase with modifications. Generally, place new files in the former, keeping changes to the latter to a minimum.
+## Dùng trên tay
 
-- You can use either Java or, preferably, Kotlin.
+Mở biểu tượng RC Launcher. Nhấn Mở để chọn DJI Fly khi chưa gán. Ô Ứng dụng mở danh sách; tìm theo tên/package, giữ một app để ghim. Công cụ chứa app ghim. Giữ Tệp/Ảnh/Web để chọn handler riêng. Không tự bật FCC hay sửa DJI Fly.
 
-- Make sure your code is logical and well formatted. If using Kotlin, see [“Coding conventions” in the Kotlin documentation](https://kotlinlang.org/docs/coding-conventions.html).
+Ô Launcher mở cài đặt: chọn app, ngôn ngữ VI/EN, xuất/nhập/reset cấu hình, diagnostics. Cử chỉ toàn hệ thống là tùy chọn; nếu muốn thử, tự bật trong Trợ năng, bật vùng điều hướng và hiệu chỉnh trước khi dùng. Không tự ghi secure settings/cấp service.
 
-- Set `12.1-dev` as the base branch for pull requests.
+[Cài/gỡ/khôi phục](docs/rc2-install-recovery.md) · [Điều hướng](docs/navigation.md) · [Audit nguồn](docs/upstream-audit.md) · [Kiểm thử](docs/test-report.md).
 
-## Translate
+## Nguồn và phạm vi adaptation
 
-You can help translate Lawnchair 12.1 [on Crowdin](https://lawnchair.crowdin.com/lawnchair). Here are a few tips:
+Upstream Lawnchair commit 78873fa3a8872eaee3e10211174cb5338c021a4f; submodule SystemUI 1827de15c65f4ebcaab798b5e1a0a2569851e4a4. Giữ source fork và license; tái dùng/adapt ComponentKey và ColorExtractor từ Launcher3, public LauncherApps adapter cho model/binding và cache giới hạn. RC module không khởi tạo Lawnchair Application/Workspace/Quickstep/root/feed/widget graph. Đây là adaptation riêng với package mới, không ghi đè APK app.lawnchair hiện có. Quyết định được ghi trong ADR trước code.
 
-- When using quotation marks, insert the symbols specific to the target language, as listed in [this table](https://en.wikipedia.org/wiki/Quotation_mark#Summary_table).
+Baseline Lawnchair withoutQuickstep chưa pass: link resource thiếu bg_overview_clear_all_button, và source vẫn coupling Quickstep. Không dùng tên flavor làm bằng chứng no-Quickstep hoạt động.
 
-- Lawnchair uses title case for some English UI text. Title case isn’t used in other languages; opt for sentence case instead.
+Giữ LICENSE.txt (Apache 2.0) và bản README upstream trong docs/upstream-readme.md. Biểu tượng RC là vector tự tạo; biểu tượng ứng dụng lấy từ app đã cài, không có asset DJI đóng gói lại. Xem NOTICE-RC.md.
 
-- Some English terminology may have no commonly used equivalents in other languages. In such cases, use short descriptive phrases–for example, the equivalent of _bottom row_ for _dock_.
+Preview5 dùng icon gốc LauncherActivityInfo của ứng dụng đã cài. Dashboard ưu tiên app ghim/binding, sau đó app tiện ích có thật; không vẽ icon browser giả khi máy không có browser. Menu ⋮ mở danh sách app và cấu hình. CPU đọc node cpuss public theo millidegree Celsius, Pin là Android battery report; không phải nhiệt vỏ và chưa xác minh hiệu chuẩn firmware. Đọc CPU10giây khi visible, dừng khi background, không root/shell trong APK.
 
-## Quick links
-
-- [News](https://t.me/lawnchairci)
-- [Lawnchair on X](https://x.com/lawnchairapp)
-- [Website](https://lawnchair.app)
-- [_XDA_ thread](https://forum.xda-developers.com/t/lawnchair-customizable-pixel-launcher.3627137/)
-
-You can view all our links on [the Lawnchair Wiki](https://github.com/LawnchairLauncher/lawnchair/wiki).
+Home/boot integration now supplied by [RC2 Việt](https://github.com/GinzaTech/rc2-viet): Homebridge3.0 prefers RC Launcher, fallbackLawnchair. The RC APK still uses public app APIs, without root/shell or secure-setting changes. PC integration is scoped to the firmware inspected. Normal Home key and startup after reboot were observed entering RC Launcher; global service remains optional/off.

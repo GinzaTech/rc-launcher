@@ -1,0 +1,25 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <queries>
+        <intent><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent>
+        <intent><action android:name="android.settings.SETTINGS"/></intent>
+        <intent><action android:name="android.settings.ACCESSIBILITY_SETTINGS"/></intent>
+        <intent><action android:name="android.intent.action.OPEN_DOCUMENT"/><category android:name="android.intent.category.OPENABLE"/><data android:mimeType="*/*"/></intent>
+        <intent><action android:name="android.intent.action.VIEW"/><data android:scheme="https"/></intent>
+        <intent><action android:name="android.intent.action.VIEW"/><data android:mimeType="image/*"/></intent>
+    </queries>
+    <application android:name=".RCApplication" android:label="@string/app_name" android:icon="@drawable/rc_icon"
+        android:theme="@style/RCTheme" android:allowBackup="false" android:supportsRtl="true">
+        <activity android:name=".RCLauncher" android:exported="true" android:launchMode="singleTask"
+            android:screenOrientation="landscape" android:resizeableActivity="true">
+            <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.HOME"/><category android:name="android.intent.category.DEFAULT"/></intent-filter>
+            <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
+        </activity>
+        <activity android:name=".RCSettingsActivity" android:exported="true" android:screenOrientation="landscape"/>
+        <service android:name=".RCNavigationService" android:exported="true" android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:label="@string/navigation_service">
+            <intent-filter><action android:name="android.accessibilityservice.AccessibilityService"/></intent-filter>
+            <meta-data android:name="android.accessibilityservice" android:resource="@xml/rc_navigation_service"/>
+        </service>
+    </application>
+</manifest>

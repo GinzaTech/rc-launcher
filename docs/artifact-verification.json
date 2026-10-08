@@ -1,0 +1,50 @@
+{
+  "upstream_sha": "78873fa3a8872eaee3e10211174cb5338c021a4f",
+  "submodule_sha": "1827de15c65f4ebcaab798b5e1a0a2569851e4a4",
+  "package_debug": "dev.rclauncher.rc2.debug",
+  "version": "1.0-preview6",
+  "versionCode": 6,
+  "SDK": {
+    "min": 30,
+    "target": 32,
+    "compile": 34
+  },
+  "native_libraries": [],
+  "runtime_permissions": [
+    "ACCESS_NETWORK_STATE"
+  ],
+  "apk_debug": {
+    "bytes": 158414,
+    "sha256": "4c6f914531a74158ae62fd12c3957bd245ca3054e7e0a34f57f04b9a5622e05d",
+    "signing": "Android Debug"
+  },
+  "apk_release": {
+    "bytes": 83527,
+    "sha256": "ba6f9bab8c05aee7c85bc43e06b012019404ba62314e63a23ab57704cd5f1760",
+    "signing": "UNSIGNED; not installable as delivered"
+  },
+  "unit_tests": 24,
+  "unit_failures": 0,
+  "lint_errors": 0,
+  "lint_warnings": 33,
+  "actual_rc_install": "PASS",
+  "actual_rc_dashboard": "PASS actual application icons + CPU/pin source labels",
+  "home_role_change": "NOT_RUN; companion mode",
+  "global_service": "NOT_RUN; optional and disabled per latest user scope",
+  "reboot": "NOT_RUN",
+  "flight_tests": "NOT_RUN",
+  "device": {
+    "model": "RC331",
+    "display": "V14.00.00.04 test-keys",
+    "incremental": "4",
+    "abi": "arm64-v8a,armeabi-v7a,armeabi",
+    "density": 2.5
+  },
+  "actual_search": "PASS query DJI -> dji.go.v5",
+  "thermal": {
+    "battery_driver": "dji-primary-battery reports300 ->30C; calibration not verified",
+    "cpu_source": "read-only cpuss sysfs, normal app runtime confirmed91.1C",
+    "case_temperature": "NOT_MEASURED"
+  },
+  "home_routing": "PASS boot/Home through updated PC Homebridge3.0 on inspected firmware"
+}

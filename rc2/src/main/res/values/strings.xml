@@ -1,0 +1,44 @@
+<resources>
+    <string name="pin_short">Pin</string>
+    <string name="battery_temperature">Nhiệt độ pin RC</string>
+    <string name="wifi_connected">Wi-Fi đã kết nối</string><string name="wifi_disconnected">Wi-Fi chưa kết nối</string>
+    <string name="open">Mở</string>
+    <string name="short_tools">Công cụ</string><string name="short_gallery">Ảnh</string><string name="short_system">Hệ thống</string>
+    <string name="short_browser">Web</string><string name="short_storage">Bộ nhớ</string><string name="short_settings">Launcher</string><string name="short_apps">Ứng dụng</string>
+    <string name="app_name">RC Launcher</string>
+    <string name="navigation_service">Điều hướng RC</string>
+    <string name="navigation_description">Dùng Back, Trang chủ RC và menu trong ứng dụng khác. Chỉ nhận chạm tại vùng chỉ báo và tên gói để áp dụng bố trí; không đọc nội dung màn hình.</string>
+    <string name="fly">Mở DJI Fly</string><string name="fly_choose">Chọn ứng dụng DJI Fly</string>
+    <string name="fly_hint">Một chạm để mở ứng dụng bay đã chọn</string>
+    <string name="tools">Công cụ bay</string><string name="files">Tệp</string><string name="gallery">Thư viện ảnh</string>
+    <string name="system_settings">Cài đặt hệ thống</string><string name="browser">Trình duyệt</string>
+    <string name="storage">Bộ nhớ RC</string><string name="settings">Cài đặt RC Launcher</string>
+    <string name="all_apps">Tất cả ứng dụng</string><string name="back">Quay lại</string><string name="home">Trang chủ RC</string>
+    <string name="menu">Menu RC</string><string name="close">Đóng</string><string name="switcher">Chuyển ứng dụng</string>
+    <string name="search">Tìm ứng dụng trên thiết bị</string><string name="empty">Không tìm thấy ứng dụng</string>
+    <string name="missing">Không có ứng dụng xử lý. Nhấn giữ ô để chọn ứng dụng khác.</string>
+    <string name="nav_disabled">Điều hướng toàn hệ thống chưa bật</string><string name="nav_enabled">Điều hướng RC đã kết nối</string>
+    <string name="nav_unbound">Dịch vụ đã bật nhưng chưa kết nối</string><string name="nav_interrupted">Điều hướng bị gián đoạn</string>
+    <string name="nav_failed">ROM không cho phép tạo vùng điều hướng</string>
+    <string name="nav_setup">Thiết lập điều hướng</string><string name="enable_navigation">Hiện vùng điều hướng khi dịch vụ được bật</string>
+    <string name="accessibility">Mở cài đặt Trợ năng</string><string name="role_home">Chọn launcher làm màn hình chính</string>
+    <string name="role_unavailable">Máy không cung cấp lựa chọn HOME. Có thể dùng launcher như ứng dụng.</string>
+    <string name="bindings">Ứng dụng và ghim</string><string name="choose">Chọn ứng dụng</string><string name="pin">Ghim / bỏ ghim ứng dụng</string>
+    <string name="presets">Phương thức điều hướng</string><string name="edge">Cử chỉ cạnh</string><string name="floating">Nút nổi dễ chạm</string><string name="bar">Thanh Back / Home / Menu</string>
+    <string name="fly_guard">Ưu tiên DJI Fly: giữ 650 ms trước khi về Home</string><string name="recents">Thử Recents hệ thống (chưa xác minh trên ROM)</string>
+    <string name="position">Vị trí vùng điều hướng</string><string name="thickness">Độ dày cạnh</string><string name="length">Chiều dài vùng cạnh</string><string name="bottom_width">Chiều rộng vùng đáy</string>
+    <string name="sensitivity">Khoảng vuốt cần thiết</string><string name="hold">Thời gian giữ để về Home trong DJI Fly</string><string name="opacity">Độ rõ chỉ báo</string>
+    <string name="left_handle">Hiện cạnh trái (Back)</string><string name="right_handle">Hiện cạnh phải (Menu)</string><string name="bottom_handle">Hiện vùng đáy (Home)</string>
+    <string name="preview">Thử cử chỉ (không thực hiện điều hướng)</string><string name="reset">Khôi phục vùng điều hướng mặc định</string>
+    <string name="temporary_hide">Tạm ẩn 30 giây; mở lại qua biểu tượng RC Launcher</string>
+    <string name="language">Ngôn ngữ</string><string name="vi">Tiếng Việt</string><string name="en">English</string>
+    <string name="reduce_motion">Giảm chuyển động</string><string name="diagnostics">Chẩn đoán và tương thích</string>
+    <string name="export_config">Xuất cấu hình</string><string name="import_config">Nhập cấu hình</string><string name="export_report">Xuất báo cáo đã xem</string>
+    <string name="import_failed">Cấu hình không hợp lệ; giữ nguyên cấu hình hiện tại.</string>
+    <string name="saved">Đã lưu</string><string name="unavailable">Chưa có dữ liệu</string><string name="battery">Pin RC</string>
+    <string name="wifi">Wi-Fi</string><string name="offline">Chưa có Internet được xác nhận</string><string name="internet">Internet đã xác nhận</string>
+    <string name="app_gone">Ứng dụng đã gỡ hoặc không còn mở được. Chọn lại ứng dụng.</string>
+    <string name="action_failed">Hệ thống chưa thực hiện được thao tác.</string>
+    <string name="history_hint">Ứng dụng đã mở qua RC Launcher và ứng dụng ghim; không phải danh sách tiến trình đang chạy.</string>
+    <string name="dry_run">Nhấn và vuốt trong ô thử. Chỉ hiển thị hành động dự kiến; không rời màn hình.</string>
+</resources>

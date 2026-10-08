@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="pin_short">Battery</string>
+    <string name="battery_temperature">RC battery temperature</string>
+    <string name="wifi_connected">Wi-Fi connected</string><string name="wifi_disconnected">Wi-Fi disconnected</string>
+    <string name="open">Open</string>
+    <string name="short_tools">Tools</string><string name="short_gallery">Photos</string><string name="short_system">System</string>
+    <string name="short_browser">Web</string><string name="short_storage">Storage</string><string name="short_settings">Launcher</string><string name="short_apps">Apps</string>
+    <string name="app_name">RC Launcher</string>
+    <string name="navigation_service">RC navigation</string>
+    <string name="navigation_description">Use Back, RC Home and menu in other apps. Receives touches only in the marked regions and package hints; does not read screen content.</string>
+    <string name="fly">Open DJI Fly</string><string name="fly_choose">Choose DJI Fly app</string>
+    <string name="fly_hint">Open the flight app you selected</string>
+    <string name="tools">Flight tools</string><string name="files">Files</string><string name="gallery">Gallery</string>
+    <string name="system_settings">System settings</string><string name="browser">Browser</string>
+    <string name="storage">RC storage</string><string name="settings">RC Launcher settings</string>
+    <string name="all_apps">All apps</string><string name="back">Back</string><string name="home">RC Home</string>
+    <string name="menu">RC Menu</string><string name="close">Close</string><string name="switcher">Switch apps</string>
+    <string name="search">Search local apps</string><string name="empty">No apps found</string>
+    <string name="missing">No handler available. Hold a tile to choose another app.</string>
+    <string name="nav_disabled">Global navigation is not enabled</string><string name="nav_enabled">RC navigation is connected</string>
+    <string name="nav_unbound">Service enabled but not connected</string><string name="nav_interrupted">Navigation interrupted</string>
+    <string name="nav_failed">The ROM denied navigation overlays</string>
+    <string name="nav_setup">Set up navigation</string><string name="enable_navigation">Show navigation controls when the service is enabled</string>
+    <string name="accessibility">Open Accessibility settings</string><string name="role_home">Choose the default Home launcher</string>
+    <string name="role_unavailable">Home role is unavailable. You can still use the launcher as an app.</string>
+    <string name="bindings">Apps and pins</string><string name="choose">Choose app</string><string name="pin">Pin or unpin an app</string>
+    <string name="presets">Navigation method</string><string name="edge">Edge gestures</string><string name="floating">Accessible floating button</string><string name="bar">Back / Home / Menu bar</string>
+    <string name="fly_guard">DJI Fly priority: hold before going Home</string><string name="recents">Try system Recents (ROM UI not verified)</string>
+    <string name="position">Navigation region position</string><string name="thickness">Edge thickness</string><string name="length">Side region length</string><string name="bottom_width">Bottom region width</string>
+    <string name="sensitivity">Required swipe distance</string><string name="hold">DJI Fly Home hold time</string><string name="opacity">Indicator opacity</string>
+    <string name="left_handle">Show left edge (Back)</string><string name="right_handle">Show right edge (Menu)</string><string name="bottom_handle">Show bottom region (Home)</string>
+    <string name="preview">Test gestures without navigation</string><string name="reset">Reset navigation regions</string>
+    <string name="temporary_hide">Hide for 30 seconds; restore through the RC Launcher icon</string>
+    <string name="language">Language</string><string name="vi">Tiếng Việt</string><string name="en">English</string>
+    <string name="reduce_motion">Reduce motion</string><string name="diagnostics">Diagnostics and compatibility</string>
+    <string name="export_config">Export configuration</string><string name="import_config">Import configuration</string><string name="export_report">Export reviewed report</string>
+    <string name="import_failed">Invalid configuration. Previous configuration is unchanged.</string>
+    <string name="saved">Saved</string><string name="unavailable">Unavailable</string><string name="battery">RC battery</string>
+    <string name="wifi">Wi-Fi</string><string name="offline">Internet not validated</string><string name="internet">Internet validated</string>
+    <string name="app_gone">App removed or unavailable. Choose an app again.</string>
+    <string name="action_failed">The system could not perform this action.</string>
+    <string name="history_hint">Apps opened through RC Launcher and your pins. This is not a list of running processes.</string>
+    <string name="dry_run">Touch and swipe in a test region. Shows the predicted action without leaving this screen.</string>
+</resources>

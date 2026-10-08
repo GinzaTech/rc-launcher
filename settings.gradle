@@ -5,18 +5,7 @@ pluginManagement {
     }
 }
 
-// https://docs.gradle.com/enterprise/gradle-plugin/
-plugins {
-    id "com.gradle.enterprise" version "3.15.1"
-}
-
-gradleEnterprise {
-    buildScan {
-        termsOfServiceUrl = "https://gradle.com/terms-of-service"
-        termsOfServiceAgree = "yes"
-        publishAlways()
-    }
-}
+// RC fork: build scans are not uploaded.
 
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -41,3 +30,4 @@ include ':compatLib'
 include ':compatLibVR'
 include ':compatLibVS'
 include ':hidden-api'
+include ':rc2'

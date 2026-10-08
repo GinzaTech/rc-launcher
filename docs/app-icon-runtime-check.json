@@ -1,0 +1,5 @@
+{
+  "gallery": "mResumedActivity: ActivityRecord{8e82b93 u0 com.android.gallery3d/.app.GalleryActivity t90}",
+  "files": "mResumedActivity: ActivityRecord{7d02aab u0 com.android.documentsui/.files.FilesActivity t89}",
+  "gallery_method": "foreground asserted; click bounds from fresh app icon hierarchy"
+}
